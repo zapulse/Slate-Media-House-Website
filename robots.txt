@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Disallow: /utility-pages/
+Disallow: /401.html
+Disallow: /404.html
+Disallow: /checkout.html
+Disallow: /order-confirmation.html
+Disallow: /paypal-checkout.html
+Disallow: /search.html
+Disallow: /component-*
+
+Sitemap: https://www.slatemediahouse.com/sitemap.xml
+
+# LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
