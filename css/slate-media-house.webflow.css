@@ -14727,10 +14727,10 @@ blockquote {
   }
 
   .phone-content-box-wrap {
-    width: 120px;
+    flex: 1;
+    width: auto;
     max-width: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
   }
 
   .phone-icon {
@@ -14745,7 +14745,8 @@ blockquote {
   }
 
   .email-content-box-wrap {
-    width: 120px;
+    flex: 1;
+    width: auto;
     max-width: none;
     padding: 20px;
   }
@@ -14785,7 +14786,7 @@ blockquote {
   .contact-left-content-box {
     flex-flow: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
   }
 
   .contact-content-box {
@@ -16070,10 +16071,12 @@ blockquote {
   .impact-content-wrap.four {
     box-shadow: none;
     border-radius: 50px 0;
-    width: 280px;
+    width: 100%;
     min-width: auto;
     height: auto;
-    padding: 0;
+    max-height: 185px;
+    padding: 20px;
+    overflow: hidden;
   }
 
   .impact-content-wrap.three {
@@ -16101,8 +16104,10 @@ blockquote {
     width: 100%;
     min-width: auto;
     height: auto;
+    max-height: 185px;
     margin-right: 0;
     padding-top: 0;
+    overflow: hidden;
   }
 
   .impact-content-wrap.one {
@@ -16131,15 +16136,18 @@ blockquote {
     min-width: auto;
     height: auto;
     min-height: auto;
-    max-height: none;
+    max-height: 185px;
     margin-right: 0;
     padding-bottom: 0;
+    overflow: hidden;
   }
 
   .impact-content-wrap.one.our-approach.four {
     box-shadow: none;
     border-bottom-right-radius: 50px;
+    max-height: 185px;
     padding-bottom: 0;
+    overflow: hidden;
   }
 
   .impact-text-wrap {
@@ -16870,6 +16878,8 @@ blockquote {
 
   .flex-block-3 {
     flex-flow: column;
+    width: 100%;
+    overflow: hidden;
   }
 
   .lottie-animation-9 {

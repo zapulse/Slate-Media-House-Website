@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Slate Media House</title>
-  <meta content="Vexys is a creative, modern-style website built for innovative AI solutions. With a sleek interface and dynamic visuals, it’s ideal for showcasing intelligent tools, smart automation, and cutting-edge technology services." name="description">
+  <meta content="We don't believe in cookie-cutter marketing. Every brand has a unique story and we're here to sketch it, color it, and bring it to life. Slate Media House — creative marketing agency." name="description">
   <meta content="Slate Media House" property="og:title">
-  <meta content="Vexys is a creative, modern-style website built for innovative AI solutions. With a sleek interface and dynamic visuals, it’s ideal for showcasing intelligent tools, smart automation, and cutting-edge technology services." property="og:description">
-  <meta content="https://cdn.prod.website-files.com/6913001aebb5baf52f092176/697b65118bba8178d5040a9a_Graph%20image.webp" property="og:image">
+  <meta content="We don't believe in cookie-cutter marketing. Every brand has a unique story and we're here to sketch it, color it, and bring it to life. Slate Media House — creative marketing agency." property="og:description">
+  <meta content="https://www.slatemediahouse.com/images/slatemediahouse-logo.svg" property="og:image">
   <meta content="Slate Media House" property="twitter:title">
-  <meta content="Vexys is a creative, modern-style website built for innovative AI solutions. With a sleek interface and dynamic visuals, it’s ideal for showcasing intelligent tools, smart automation, and cutting-edge technology services." property="twitter:description">
-  <meta content="https://cdn.prod.website-files.com/6913001aebb5baf52f092176/697b65118bba8178d5040a9a_Graph%20image.webp" property="twitter:image">
+  <meta content="We don't believe in cookie-cutter marketing. Every brand has a unique story and we're here to sketch it, color it, and bring it to life. Slate Media House — creative marketing agency." property="twitter:description">
+  <meta content="https://www.slatemediahouse.com/images/slatemediahouse-logo.svg" property="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -1002,7 +1002,7 @@
             <div class="cover-image-wrap footer hide"><img src="images/slatemedia-house-logo.svg" loading="lazy" alt="slatemedia house logo" class="cover-image footer"></div>
           </div>
           <div class="copyright-box">
-            <p class="paragraph white center footer">© 2026 Slate Media House. All rights reserved.</p>
+            <p class="paragraph white center footer">© 2026 Zapulse. All rights reserved.</p>
           </div>
         </div>
       </div>
@@ -1013,5 +1013,53 @@
   <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js" type="text/javascript"></script>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var sections = [];
+
+        // Brand strip
+        var bw = document.querySelector('.hero-slider-wrap');
+        var bi = document.querySelector('.hero-slider-box');
+        if (bw && bi) sections.push({ w: bw, i: bi });
+
+        // Testimonials + Industry (both share .client-voice-layout)
+        document.querySelectorAll('.client-voice-layout').forEach(function (wrap) {
+          var inner = wrap.querySelector('.client-voice-botton-wrap');
+          if (inner) sections.push({ w: wrap, i: inner });
+        });
+
+        sections.forEach(function (s) {
+          var rafId = null;
+
+          function freeze() {
+            if (rafId !== null) return;
+            // Capture the exact rendered transform at the moment the pointer enters
+            var frozenVal = window.getComputedStyle(s.i).transform;
+            (function tick() {
+              // Our RAF runs after GSAP's ticker each frame, so we always win
+              s.i.style.transform = frozenVal;
+              rafId = requestAnimationFrame(tick);
+            }());
+          }
+
+          function unfreeze() {
+            if (rafId !== null) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+              // Let GSAP reclaim the inline style
+              s.i.style.transform = '';
+            }
+          }
+
+          s.w.addEventListener('mouseenter', freeze);
+          s.w.addEventListener('mouseleave', unfreeze);
+          s.w.addEventListener('touchstart',  freeze,   { passive: true });
+          s.w.addEventListener('touchend',    unfreeze, { passive: true });
+          s.w.addEventListener('touchcancel', unfreeze, { passive: true });
+        });
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
