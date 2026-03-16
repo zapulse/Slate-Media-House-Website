@@ -14555,7 +14555,8 @@ blockquote {
     text-align: center;
     word-break: break-word;
     overflow-wrap: break-word;
-    max-width: 100%;
+    width: 100%;
+    max-width: 100vw;
   }
 
   .h3 {
@@ -16225,6 +16226,8 @@ blockquote {
   .about-me-layout {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    align-items: stretch;
+    width: 100%;
   }
 
   .about-me-heading {
@@ -16514,7 +16517,6 @@ blockquote {
     width: 100%;
     max-width: 100%;
     padding-top: 0;
-    overflow: hidden;
   }
 
   .glass-effect-image {
@@ -16866,8 +16868,13 @@ blockquote {
 
   .section-2 {
     padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mobile-break {
+    display: block;
+    text-align: center;
   }
 
   .flex-block {
@@ -16875,6 +16882,7 @@ blockquote {
     grid-row-gap: 0px;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   .flex-block-2 {
@@ -16885,6 +16893,7 @@ blockquote {
 
   .flex-block-3 {
     flex-flow: column;
+    align-items: center;
     width: 100%;
     overflow: hidden;
   }
